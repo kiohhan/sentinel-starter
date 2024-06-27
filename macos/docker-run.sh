@@ -9,3 +9,5 @@ ssh_file="id_rsa_personal"
 containerid=$(docker run -d -t node:$node_tag)
 docker container cp ~/.ssh/$ssh_file $containerid:/root/.ssh/id_rsa
 docker exec $containerid mkdir /root/work
+docker exec $containerid git config --global user.email "kiohhan.dev@gmail.com"
+docker exec $containerid git config --global user.name "Kioh"
